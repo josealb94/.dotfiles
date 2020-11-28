@@ -132,7 +132,8 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # NodeJS
-export NVM_DIR="/home/jose/.nvm"
+#export NVM_DIR="$HOME/.nvm"
+export NVM_DIR=$HOME/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Personal settings
