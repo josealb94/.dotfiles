@@ -1,3 +1,15 @@
+# Software
+## Shell (zsh)
+### Files
+* `$HOME/.zshrc`
+## Terminal (Termite)
+### Files
+* `$HOME/.config/termite/config`
+## Text Editor (neovim)
+### Files
+* `$HOME/.config/nvim/init.vim`
+* `$HOME/.config/.vimrc`
+
 # Dotfiles with a bare Git repository
 ## Bare Git repository setup
 ```sh
