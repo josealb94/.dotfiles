@@ -6,32 +6,48 @@
 " Commands
 
 " |----------|> Vim Settings <|----------|
-"" Line Number
-set number
-"" Line number size
-set numberwidth=1
-"" Copy to clipboard
-set clipboard=unnamed
+" https://dougblack.io/words/a-good-vimrc.html
 "" Enable syntax
 syntax enable
-"" Shows the commands executed
-set showcmd
+"" Copy to clipboard
+set clipboard=unnamed
 "" Show the position at the bottom
 set ruler
 "" Default file encoding
 set encoding=utf-8
-"" Indicates the corresponding element that closes - ([{
-set showmatch
-"" Change the indentation from tab to spaces
-set sw=2
-"" Line number based on cursor
-set relativenumber
 "" The bottom bar always visible
 set laststatus=2
 "" Allows use of mouse
 "set mouse=a
 "" Hide mode
 "set noshowmode
+" |----------|> Vim Settings => Spaces & Tabs <|----------|
+" Change the indentation from tab to spaces
+"set sw=2
+" Number of visual spaces per TAB
+set tabstop=4
+" Number of spaces in tab when editing
+set softtabstop=4
+" Tabs are spaces
+set expandtab
+" |----------|> Vim Settings => UI Config <|----------|
+" Show line numbers
+set number
+"" Line number size
+set numberwidth=4
+"" Line number based on cursor
+set relativenumber
+" Show command in bottom bar
+set showcmd
+" Highlight current line
+set cursorline
+" Highlight matching [{()}]
+set showmatch
+" |----------|> Vim Settings => Searching <|----------|
+" Search as characters are entered
+set incsearch           
+" Highlight matches
+set hlsearch            
 
 " |----------|> Plugin Settings <|----------|
 " Vim plugin manager: vim-plug
@@ -133,6 +149,10 @@ nmap <Leader>nt :NERDTreeFind<CR>
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
 nmap <Leader>e :wq<CR>
+" Turn off search highlight
+nnoremap <Leader>ns :nohlsearch<CR>
+" Remap escape
+inoremap jk <Esc>
 
 " IMPORTANT NOTES
 "" $ python3 -m pip install pynvim 
