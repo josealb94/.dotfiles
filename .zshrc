@@ -109,7 +109,10 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Colors
+#   https://jonasjacek.github.io/colors/
+#   https://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
 export TERM=xterm-256color
+
 
 # NodeJS
 #export NVM_DIR="$HOME/.nvm"
