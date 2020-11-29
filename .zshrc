@@ -71,10 +71,14 @@ ZSH_THEME="josealb94"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
-	sublime
-	tmux
+	#sublime
+	#tmux
 	colored-man-pages
+	zsh-autosuggestions
 )
+# Plugins Detail
+#   zsh-autosuggestions
+#     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions<Paste>
 
 source $ZSH/oh-my-zsh.sh
 
