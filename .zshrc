@@ -72,7 +72,7 @@ ZSH_THEME="josealb94"
 plugins=(
 	git
 	#sublime
-	#tmux
+	tmux
 	colored-man-pages
 	zsh-autosuggestions
 )

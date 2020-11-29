@@ -9,7 +9,7 @@ dynamic_title = true
 #font = Monospace 9
 font = DejaVu Sans Mono 12
 fullscreen = true
-icon_name = terminal
+#icon_name = terminal
 mouse_autohide = true
 scroll_on_output = false
 scroll_on_keystroke = true
@@ -41,6 +41,11 @@ cursor_blink = on
 
 # "off", "left" or "right"
 #scrollbar = off
+
+# vte-256color has the correct terminfo, but some applications (vim, weechat)
+# still need patches for mouse/title support
+term = screen-256color
+
 
 [colors]
 # If both of these are unset, cursor falls back to the foreground color,
