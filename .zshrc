@@ -104,6 +104,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Colors
+export TERM=xterm-256color
+
 # NodeJS
 #export NVM_DIR="$HOME/.nvm"
 export NVM_DIR=$HOME/.nvm
