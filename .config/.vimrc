@@ -23,7 +23,7 @@ set laststatus=2
 "set noshowmode
 " |----------|> Vim Settings => Spaces & Tabs <|----------|
 " Change the indentation from tab to spaces
-"set sw=2
+set sw=4
 " Number of visual spaces per TAB
 set tabstop=4
 " Number of spaces in tab when editing
@@ -56,8 +56,11 @@ call plug#begin('~/.vim/plugged')
 " |----------|> Plugin => Theme <|----------|
 Plug 'dracula/vim', { 'as': 'dracula' }
 " |----------|> Plugin => IDE <|----------|
+" https://github.com/easymotion/vim-easymotion
 Plug 'easymotion/vim-easymotion'
+" https://github.com/preservim/nerdtree
 Plug 'scrooloose/nerdtree'
+" https://github.com/christoomey/vim-tmux-navigator
 Plug 'christoomey/vim-tmux-navigator'
 " |----------|> Plugin => NCM2 autocomplete plugin <|----------|
 " https://github.com/ncm2/ncm2
@@ -144,6 +147,8 @@ nmap <Leader>s <Plug>(easymotion-s2)
 
 " |----------|> Commands => NERDTree <|----------|
 nmap <Leader>nt :NERDTreeFind<CR>
+map  <Leader>. :tabn<CR>
+map  <Leader>, :tabp<CR>
 
 " |----------|> Commands => Custom <|----------|
 nmap <Leader>w :w<CR>
