@@ -9,7 +9,8 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="josealb94"
+#ZSH_THEME="josealb94"
+ZSH_THEME="josealb94_v2"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -108,9 +109,14 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Colors
+# SSH Issue
 #   https://jonasjacek.github.io/colors/
 #   https://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
+# Remote SSH connection sometimes the error: 
+# - "Error opening terminal: xterm-termite"
+# - "Open terminal failed: missing or unsuitable terminal: xterm-termite"
+#export TERM=xterm-color
+# If your system support 256 color
 export TERM=xterm-256color
 
 
@@ -123,3 +129,16 @@ export NVM_DIR=$HOME/.nvm
 if [ -f ~/.my_config ]; then
     . ~/.my_config
 fi
+
+if [[ $TERM == xterm-termite ]]; then
+  . /etc/profile.d/vte.sh
+  __vte_osc7
+fi
+
+# emulate bash PROMPT_COMMAND (only for zsh)
+#precmd() { eval "$PROMPT_COMMAND" }
+# open new terminal in same dir
+#PROMPT_COMMAND='pwd > "${HOME}/.cwd"'
+#[[ -f "${HOME}/.cwd" ]] && cd "$(< ${HOME}/.cwd)"
+
+#. /etc/profile.d/vte-2.91.sh
