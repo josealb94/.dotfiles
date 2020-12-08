@@ -135,6 +135,19 @@ if [[ $TERM == xterm-termite ]]; then
   __vte_osc7
 fi
 
+# auto start tmux
+if [ "$TMUX" = "" ]; then
+    # check for old session
+    if [ "$(tmux ls | grep -v attached | wc -l)" -gt "0" ]; then
+        # attach to old session
+        tmux a -t "$(tmux ls | grep -v attached | cut -d ":" -f1 | head -n 1)"
+    else
+        # start new session - dont use exec so it's possible to run without tmux
+        tmux
+    fi
+fi
+
+
 # emulate bash PROMPT_COMMAND (only for zsh)
 #precmd() { eval "$PROMPT_COMMAND" }
 # open new terminal in same dir
