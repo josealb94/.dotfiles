@@ -21,10 +21,16 @@ local hostname="$PR_LIGHT_GREEN%M%{$reset_color%}"
 local date="$PR_YELLOW%D{%a,%b%d}"
 local time="$PR_YELLOW%D{%H:%M:%S}"
 local pwd="$PR_CYAN%c%{$reset_color%}"
-local git='$PR_RED$PR_HBAR$PR_HBAR➤$(git_prompt_info)$(git_prompt_status)'
+local git='$PR_RED$PR_HBAR$PR_HBAR➤$(git_prompt_info) $(git_prompt_status)'
 local c_return_code="%(?:%{$PR_GREEN%}✔:%{$PR_RED%}✖)%{$reset_color%}"
 local return_code="%{$PR_MAGENTA%}[$c_return_code$PR_MAGENTA]%{$reset_color%}"
 local symbol="$PR_RED➤➤%{$reset_color%}"
+
+# TODO: Fill based on screen size
+#local fill_up_data="$PR_ULCORNER$PR_HBAR${(%):-(%n@%M)}$PR_HBAR$PR_HBAR➤"
+#local fill_up_len=${#COLUMNS}-"${#fill_up_data}"
+#local fill_up=""
+#for n in {1..$fill_up_len}; do fill_up="$fill_up$PR_HBAR"; done
 
 # Prompt
 PROMPT="$PR_RED$PR_ULCORNER$PR_HBAR(${user}$PR_RED@${hostname}$PR_RED)${git}\
@@ -35,7 +41,7 @@ $PR_RED$PR_LLCORNER$PR_HBAR(${pwd}$PR_RED)$PR_HBAR${symbol} "
 RPROMPT="${return_code}$PR_RED$PR_HBAR($date $time$PR_RED)$PR_HBAR$PR_LRCORNER%{$reset_color%}"
 
 # Git Settings
-ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[green]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[magenta]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY=""
 ZSH_THEME_GIT_PROMPT_CLEAN=""
