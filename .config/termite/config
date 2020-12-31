@@ -37,7 +37,7 @@ cursor_blink = on
 #modify_other_keys = false
 
 # set size hints for the window
-#size_hints = false
+size_hints = true
 
 # "off", "left" or "right"
 #scrollbar = off
