@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+echo "Bienvenido $USER ($HOST)!!!"
+
 # Path to your oh-my-zsh installation.
 #export ZSH="$HOME/.oh-my-zsh"
 export ZSH=$HOME/.oh-my-zsh
@@ -157,3 +159,10 @@ fi
 #[[ -f "${HOME}/.cwd" ]] && cd "$(< ${HOME}/.cwd)"
 
 #. /etc/profile.d/vte-2.91.sh
+
+#JAVA_HOME 1.8
+#export JAVA_HOME=/usr/lib/jvm/jdk8u222-b10/jre
+#JAVA_HOME 1.11
+export JAVA_HOME=/usr/lib/jvm/jdk-11.0.10/
+#CATALINA_HOME
+export CATALINA_HOME=/opt/tomcat/tomcat-9
