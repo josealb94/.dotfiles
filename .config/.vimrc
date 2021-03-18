@@ -1,164 +1,45 @@
-" |----------|> Content <|----------|
-" Vim Settings
-" Plugin
-" Theme
-" Settings
-" Commands
-
 " |----------|> Vim Settings <|----------|
-" https://dougblack.io/words/a-good-vimrc.html
-"" Enable syntax
-syntax enable
-"" Copy to clipboard
-set clipboard=unnamed
-"" Show the position at the bottom
-set ruler
-"" Default file encoding
-set encoding=utf-8
-"" The bottom bar always visible
-set laststatus=2
-"" Allows use of mouse
-"set mouse=a
-"" Hide mode
-"set noshowmode
+syntax on                   " enable syntax
+"syntax enable                   " enable syntax
+set clipboard=unnamed           " copy to clipboard
+set ruler                       " show the position at the bottom
+set encoding=utf-8              " default file encoding
+set laststatus=2                " the bottom bar always visible
+"set mouse=a                    " allows use of mouse
+set noshowmode                 " hide mode
+
 " |----------|> Vim Settings => Spaces & Tabs <|----------|
-" Change the indentation from tab to spaces
-set sw=4
-" Number of visual spaces per TAB
-set tabstop=4
-" Number of spaces in tab when editing
-set softtabstop=4
-" Tabs are spaces
-set expandtab
+set sw=4                        " change the indentation from tab to spaces
+set tabstop=4                   " number of visual spaces per TAB
+set softtabstop=4               " number of spaces in tab when editing
+set expandtab                   " tabs are spaces
+
 " |----------|> Vim Settings => UI Config <|----------|
-" Show line numbers
-set number
-"" Line number size
-set numberwidth=4
-"" Line number based on cursor
-set relativenumber
-" Show command in bottom bar
-set showcmd
-" Highlight current line
-set cursorline
-" Highlight matching [{()}]
-set showmatch
+set number                      " show line numbers
+set numberwidth=4               " line number size
+set relativenumber              " line number based on cursor
+set showcmd                     " show command in bottom bar
+set cursorline                  " highlight current line
+set showmatch                   " highlight matching [{()}]
+
 " |----------|> Vim Settings => Searching <|----------|
-" Search as characters are entered
-set incsearch           
-" Highlight matches
-set hlsearch            
+set incsearch                   " search as characters are entered (incremental searching)
+set hlsearch                    " highlight matches
+set ignorecase                  " searches are case insensitive...
+set smartcase                   " ... unless they contain at least one capital letter
 
-" |----------|> Plugin Settings <|----------|
-" Vim plugin manager: vim-plug
-" junegunn/vim-plug => https://github.com/junegunn/vim-plug#
-call plug#begin('~/.vim/plugged')
-" |----------|> Plugin => Theme <|----------|
-Plug 'dracula/vim', { 'as': 'dracula' }
-" |----------|> Plugin => IDE <|----------|
-" https://github.com/easymotion/vim-easymotion
-Plug 'easymotion/vim-easymotion'
-" https://github.com/preservim/nerdtree
-Plug 'scrooloose/nerdtree'
-" https://github.com/christoomey/vim-tmux-navigator
-Plug 'christoomey/vim-tmux-navigator'
-" |----------|> Plugin => NCM2 autocomplete plugin <|----------|
-" https://github.com/ncm2/ncm2
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-" Fast python completion (use ncm2 if you want type info or snippet support)
-"Plug 'HansPinckaers/ncm2-jedi'
-Plug 'ncm2/ncm2-jedi'
-" Words in buffer completion
-Plug 'ncm2/ncm2-bufword'
-" Filepath completion
-Plug 'ncm2/ncm2-path'
-" |----------|> Plugin => lightline.vim <|----------|
-" https://github.com/itchyny/lightline.vim
-Plug 'itchyny/lightline.vim'
-" |----------|> Plugin => fugitive.vim <|----------|
-" https://github.com/tpope/vim-fugitive
-Plug 'tpope/vim-fugitive'
-" |----------|> Plugin => fugitive.vim <|----------|
-" https://github.com/mg979/vim-visual-multi
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-
-call plug#end()
+" |----------|> Config File <|----------|
+so ~/.vim/plugins.vim
+so ~/.vim/maps.vim
+so ~/.vim/plugin-config.vim
 
 " |----------|> Theme <|----------|
 colorscheme dracula
 
-" |----------|> Settings <|----------|
-" |----------|> Settings => For plugins with Python3 <|----------|
-let g:python3_host_prog = '/usr/bin/python3'
-
-" |----------|> Settings => NERDTree <|----------|
-" Close NerdTree when opening a file
-let NERDTreeQuitOnOpen=1
-
-" |----------|> Settings => NCM2 <|----------|
-" IMPORTANT: :help Ncm2PopupOpen for more information
-" Enable ncm2 for all buffers
-"autocmd BufEnter * call ncm2#enable_for_buffer()
-autocmd BufEnter * call ncm2#enable_for_buffer()
-set completeopt=menuone,noselect,noinsert
-" Suppress the annoying 'match x of y', 'The only match' and 'Pattern not found' messages
-set shortmess+=c
-" CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
-inoremap <c-c> <ESC>
-" Make it fast
-let ncm2#popup_delay = 5
-let ncm2#complete_length = [[1, 1]]
-" Use new fuzzy based matches
-let g:ncm2#matcher = 'substrfuzzy'
-" Disable Jedi-vim autocompletion and enable call-signatures options
-let g:jedi#auto_initialization = 1
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#smart_auto_mappings = 0
-let g:jedi#popup_on_dot = 0
-let g:jedi#completions_command = ""
-let g:jedi#show_call_signatures = "1"
-
-" |----------|> Settings => lightline.vim <|----------|
-let g:lightline = {'colorscheme': 'wombat',
-\ 'active': {
-\   'left': [ [ 'mode', 'paste' ],
-\             [ 'readonly', 'filename', 'gitbranch' ] ], 
-\   'right': [ [ 'lineinfo' ],
-\              [ 'percent' ],
-\              [ 'modified', 'fileformat', 'fileencoding', 'filetype', ] ]
-\ },
-\ 'component_function': {
-\   'gitbranch': 'FugitiveHead'
-\ },
-\ }
-
-" |----------|> Settings => Colors <|----------|
-if !has('gui_running')
-  set t_Co=256
-endif
-
-" |----------|> Commands <|----------|
-let mapleader=" "
-
-" |----------|> Commands => Easymotion <|----------|
-nmap <Leader>s <Plug>(easymotion-s2)
-
-" |----------|> Commands => NERDTree <|----------|
-nmap <Leader>nt :NERDTreeFind<CR>
-map  <Leader>. :tabn<CR>
-map  <Leader>, :tabp<CR>
-
-" |----------|> Commands => Custom <|----------|
-nmap <Leader>w :w<CR>
-nmap <Leader>q :q<CR>
-nmap <Leader>e :wq<CR>
-" Turn off search highlight
-nnoremap <Leader>ns :nohlsearch<CR>
-" Remap escape
-inoremap jk <Esc>
-
 " IMPORTANT NOTES
 "" $ python3 -m pip install pynvim 
 "" $ pip install jedi
+
+" Reference
+" https://github.com/nschurmann/configs
+" https://dougblack.io/words/a-good-vimrc.html
