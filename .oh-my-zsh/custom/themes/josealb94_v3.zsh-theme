@@ -15,7 +15,7 @@ local pwd="$PR_CYAN%c%{$reset_color%}"
 local git='$PR_RED$(git_prompt_info)$(git_prompt_status)'
 local c_return_code="%(?:%{$PR_GREEN%}✔:%{$PR_RED%}✖)%{$reset_color%}"
 local return_code="%{$PR_MAGENTA%}[$c_return_code$PR_MAGENTA]%{$reset_color%}"
-local symbol="$PR_RED ➤➤%{$reset_color%}"
+local symbol="$PR_RED) ➤➤%{$reset_color%}"
 
 # Prompt
 PROMPT="${pwd}${git}${symbol} "
@@ -30,10 +30,10 @@ ZSH_THEME_GIT_PROMPT_DIRTY=""
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 # Git Status Settings
-ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%}✚$PR_RED)"
-ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[blue]%}✹$PR_RED)"
-ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%}✖$PR_RED)"
-ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[magenta]%}➜$PR_RED)"
-ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%}═$PR_RED)"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%}✭$PR_RED)"
+ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%}✚"
+ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[blue]%}✹"
+ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%}✖"
+ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[magenta]%}➜"
+ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%}═"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%}✭"
 
