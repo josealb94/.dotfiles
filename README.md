@@ -19,9 +19,23 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 ### Files
 * `$HOME/.config/termite/config`
 ## Text Editor (neovim)
+***Vim plugin manager***: vim-plug
+junegunn/vim-plug ==> https://github.com/junegunn/vim-plug#
+
 ### Files
-* `$HOME/.config/nvim/init.vim`
-* `$HOME/.config/.vimrc`
+File to load vim configuration
+`$HOME/.config/nvim/init.vim`
+Main configuration file
+`$HOME/.config/.vimrc`
+Import plugins
+`$HOME/.vim/plugins.vim`
+Plugin configuration
+`$HOME/.vim/plugin-config.vim`
+Key mapping
+`$HOME/.vim/maps.vim`
+
+### Instructions
+In the file `$HOME/.vim/plugins.vim` you must execute `:PlugInstall` to install the imported plugins
 
 # Dotfiles with a bare Git repository
 ## Bare Git repository setup
