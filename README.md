@@ -2,6 +2,19 @@
 ## Shell (zsh)
 ### Files
 * `$HOME/.zshrc`
+### Plugins
+* git
+* zsh-autosuggestions
+* zsh-syntax-highlighting
+```sh
+# git
+# zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+# zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+```
+### Installation required
+* [Powerline Fonts](https://github.com/powerline/fonts)
 ## Terminal (Termite)
 ### Files
 * `$HOME/.config/termite/config`
