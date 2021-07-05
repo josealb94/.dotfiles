@@ -140,3 +140,5 @@ export NVM_DIR=$HOME/.nvm
 if [ -f ~/.my_config ]; then
     . ~/.my_config
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

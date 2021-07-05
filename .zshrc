@@ -1,7 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$PATH
 
-echo "Bienvenido $USER ($HOST)!!!"
+echo "Bienvenido $USER!!!"
 
 # Path to your oh-my-zsh installation.
 #export ZSH="$HOME/.oh-my-zsh"
@@ -76,7 +77,7 @@ ZSH_THEME="josealb94_v3"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
-	tmux
+	#tmux
 	colored-man-pages
 	zsh-autosuggestions
 	zsh-syntax-highlighting
@@ -121,10 +122,10 @@ source $ZSH/oh-my-zsh.sh
 export TERM=xterm-256color
 
 
-# NodeJS
-#export NVM_DIR="$HOME/.nvm"
-export NVM_DIR=$HOME/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# Nvm Config
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Personal settings
 if [ -f ~/.my_config ]; then
@@ -135,6 +136,9 @@ if [[ $TERM == xterm-termite ]]; then
   . /etc/profile.d/vte.sh
   __vte_osc7
 fi
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # auto start tmux
 #if [ "$TMUX" = "" ]; then
@@ -160,6 +164,7 @@ fi
 #JAVA_HOME 1.8
 #export JAVA_HOME=/usr/lib/jvm/jdk8u222-b10/jre
 #JAVA_HOME 1.11
-export JAVA_HOME=/usr/lib/jvm/jdk-11.0.10/
+#export JAVA_HOME=/usr/lib/jvm/jdk-11.0.10/
 #CATALINA_HOME
-export CATALINA_HOME=/opt/tomcat/tomcat-9
+#export CATALINA_HOME=/opt/tomcat/tomcat-9
+
